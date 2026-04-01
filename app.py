@@ -66,16 +66,24 @@ if "vectors" in st.session_state:
         document_chain=create_stuff_documents_chain(llm,prompt)
         retriever = st.session_state.vectors.as_retriever()
         retriever_chain=create_retrieval_chain(retriever,document_chain)
-
-   start = time.time()
-   response = retriever_chain.invoke({'input':user_prompt})
-   st.write(f"Response time :{time.time()-start}")
+        start = time.time()
+        response = retriever_chain.invoke({'input':user_prompt})
+        st.write(f"Response time :{time.time()-start}")
+        st.write(response['answer'])
+        with st.expander("Document similarity Search"):
+            for i,doc in enumerate(response['context']):
+                if st.button("Submit "):
+                    st.write(doc.page_content)
+                    st.write('------------------')
+              
+          
+      
    
-   st.write(response['answer'])
-   with st.expander("Document similarity Search"):
-      for i,doc in enumerate(response['context']):
-          if st.button("Submit "):
-              st.write(doc.page_content)
-              st.write('------------------')
+        
+
+        
+        
+   
+   
               
          
