@@ -55,6 +55,7 @@ else:
    st.info("Please upload a PDF file to begin")
 
 user_prompt = st.text_input("enter you Query")
+st.write("Click Document Embedding first"')
 if st.button("Document Embedding"):
    create_vector_embedding(Uploaded_file)
    st.write("vector database is ready")
@@ -66,10 +67,13 @@ if user_prompt and "vectors" in st.session_state:
 
    start = time.time()
    response = retriever_chain.invoke({'input':user_prompt})
-   print(f"Response time :{time.time()-start}")
+   st.write(f"Response time :{time.time()-start}")
    
    st.write(response['answer'])
    with st.expander("Document similarity Search"):
       for i,doc in enumerate(response['context']):
-         st.write(doc.page_content)
-         st.write('------------------')
+          if st.button("Submit"):
+              st.write(doc.page_content)
+              st.write('------------------')
+              
+         
