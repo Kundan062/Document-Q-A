@@ -4,9 +4,13 @@ import time
 import tempfile
 from langchain_groq import ChatGroq
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain_classic.chains import combine_documents
+
+from langchain_classic.chains.combine_documents import (
+    create_stuff_documents_chain,
+)
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
+from langchain_classic.chains import create_retrieval_chain
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PDFPlumberLoader
 from langchain_huggingface import HuggingFaceEmbeddings
