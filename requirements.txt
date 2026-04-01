@@ -13,7 +13,7 @@ sentence-transformers
 langchain_huggingface
 langchain_chroma
 langchain-openai
-langchain-groq
+langchain_groq
 beautifulsoup4
 faiss-cpu
 langchain-classic
