@@ -54,15 +54,15 @@ if Uploaded_file is not None:
 else:
    st.info("Please upload a PDF file to begin")
 
-
+user_prompt = st.text_input("enter you Query")
 st.write("Click Document Embedding first")
 if st.button("Document Embedding"):
    create_vector_embedding(Uploaded_file)
    st.write("vector database is ready")
 
 if "vectors" in st.session_state:
-    user_prompt = st.text_input("enter you Query")
-    if user_promt and st.button("submit"):
+    
+    if user_prompt and st.button("submit"):
         document_chain=create_stuff_documents_chain(llm,prompt)
         retriever = st.session_state.vectors.as_retriever()
         retriever_chain=create_retrieval_chain(retriever,document_chain)
