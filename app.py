@@ -55,7 +55,7 @@ else:
    st.info("Please upload a PDF file to begin")
 
 user_prompt = st.text_input("enter you Query")
-st.write("Click Document Embedding first"')
+st.write("Click Document Embedding first")
 if st.button("Document Embedding"):
    create_vector_embedding(Uploaded_file)
    st.write("vector database is ready")
