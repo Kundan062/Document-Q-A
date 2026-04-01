@@ -18,7 +18,7 @@ os.environ['GROQ_API_KEY']=os.getenv("GROQ_API_KEY")
 os.environ["HF_TOKEN"]=os.getenv("HF_TOKEN")
 
 groq_api_key=os.getenv("GROQ_API_KEY")
-llm = ChatGroq(model="mixtral-8x7b-32768",groq_api_key=groq_api_key)
+llm = ChatGroq(model="openai/gpt-oss-120b",groq_api_key=groq_api_key)
 
 prompt = ChatPromptTemplate.from_template(
   """
