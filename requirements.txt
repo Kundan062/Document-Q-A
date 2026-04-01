@@ -9,6 +9,7 @@ wikipedia
 langchain-text-splitters
 chromadb
 sentence-transformers
+pdfplumber
 langchain-huggingface
 langchain-chroma
 langchain-openai
