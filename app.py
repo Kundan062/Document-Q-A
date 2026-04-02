@@ -73,9 +73,10 @@ if "vectors" in st.session_state:
         st.write(response['answer'])
         with st.expander("Document similarity Search"):
             for i,doc in enumerate(response['context']):
-                if st.button("Submit "):
-                    st.write(doc.page_content)
-                    st.write('------------------')
+                st.write(doc.page_content)
+                st.write('------------------')
+                
+                    
               
           
       
