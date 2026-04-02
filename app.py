@@ -19,6 +19,7 @@ from langchain_community.document_loaders import PDFPlumberLoader
 
 from langchain_huggingface import HuggingFaceEmbeddings
 import tempfile 
+from dotenv import load_dotenv
 
 load_dotenv()
 
