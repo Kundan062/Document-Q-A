@@ -25,10 +25,9 @@ groq_api_key=os.getenv("GROQ_API_KEY")
 llm = ChatGroq(model="openai/gpt-oss-120b",groq_api_key=groq_api_key)
 prompt = ChatPromptTemplate.from_template(
   """
- You are an aviation knowledge assistant.
-Answer from the CONTEXT below.and Respond with accuracy and nice information.
-If the context does not contain information, respond  with:
-"This information is not available in the provided document(s)."
+  You are an aviation chat assitant.
+  Answer the questions based on the provided context only.
+  Please provide the most accurate response based on the question
   <context>
   {context}
   </context>
