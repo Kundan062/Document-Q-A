@@ -26,8 +26,10 @@ llm = ChatGroq(model="openai/gpt-oss-120b",groq_api_key=groq_api_key)
 
 prompt = ChatPromptTemplate.from_template(
   """
-  Answer the questions based on the provided context only.
-  Please provide the most accurate response based on the question
+ You are an aviation knowledge assistant.
+Answer ONLY from the CONTEXT below. Do NOT use any outside knowledge.
+If the context does not contain enough information, respond EXACTLY with:
+"This information is not available in the provided document(s)."
   <context>
   {context}
   </context>
