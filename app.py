@@ -26,8 +26,8 @@ llm = ChatGroq(model="openai/gpt-oss-120b",groq_api_key=groq_api_key)
 prompt = ChatPromptTemplate.from_template(
   """
   You are an aviation chat assitant.
-  Answer the questions based on the provided context only.
-  Please provide the most accurate response based on the question
+  Answer the questions only on the basis of provided context.
+  Please provide the most accurate response based on the question from the context.
   <context>
   {context}
   </context>
