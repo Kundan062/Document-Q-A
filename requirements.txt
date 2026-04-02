@@ -17,3 +17,6 @@ langchain-groq
 beautifulsoup4
 faiss-cpu
 streamlit
+pdf2image
+pytesseract
+pillow
